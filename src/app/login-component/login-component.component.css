@@ -1,0 +1,63 @@
+
+.custom-toolbar {
+  background-color: #025940;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.toolbar-title {
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: bold;
+}
+.titulo {
+  text-align: center;
+  font-family: comfortaa;
+  color: #025940;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-color: #f5f5f5;
+}
+
+
+.login-box {
+  background-color: white;
+  padding: 30px;
+  border: 2px solid #025940;
+  border-radius: 12px;
+  min-width: 300px;
+  max-width: 400px;
+  width: 100%;
+}
+
+
+.login-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.botao {
+  width: 100%;
+  background-color: #025940 !important ;
+  color: white !important;
+}
+.login-button:hover {
+  background-color: #014a33;
+}
+
+.footer {
+  text-align: center;
+  padding: 26px;
+  background-color: #025940;
+  color: white;
+}
