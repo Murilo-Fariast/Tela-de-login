@@ -7,18 +7,70 @@
 
 <div class="main-container">
   <div class="login-box">
-  <h2 class="titulo">Bem-vindo ao Aloongs</h2>
-  <mat-form-field class="login-field">
-  <mat-label>Usuário</mat-label>
-    <input matInput>
-  </mat-form-field>
+    <h2 class="titulo">Bem-vindo ao Aloongs</h2>
 
-<mat-form-field class="login-field">
-  <mat-label>Senha</mat-label>
-  <input matInput type="password">
-</mat-form-field>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-    <button mat-raised-button class="botao">Fazer login</button>
+      <mat-form-field class="login-field" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+        <mat-error *ngIf="formulario.get('email')?.invalid && (formulario.get('email')?.touched || formulario.get('email')?.dirty)">
+          <span *ngIf="formulario.get('email')?.hasError('required')">Email é obrigatório.</span>
+          <span *ngIf="formulario.get('email')?.hasError('email')">Email inválido.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="login-field" appearance="fill">
+        <mat-label>Confirmar Email</mat-label>
+        <input matInput formControlName="confirmarEmail" type="email" />
+        <mat-error *ngIf="formulario.get('confirmarEmail')?.invalid && (formulario.get('confirmarEmail')?.touched || formulario.get('confirmarEmail')?.dirty)">
+          <span *ngIf="formulario.get('confirmarEmail')?.hasError('required')">Confirmação do email é obrigatória.</span>
+          <span *ngIf="formulario.get('confirmarEmail')?.hasError('email')">Email inválido.</span>
+        </mat-error>
+        <mat-error *ngIf="formulario.hasError('emailsDiferentes') && (formulario.get('confirmarEmail')?.touched || formulario.get('confirmarEmail')?.dirty)">
+          Os emails não são iguais.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="login-field" appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="senha" type="password" />
+        <mat-error *ngIf="formulario.get('senha')?.invalid && (formulario.get('senha')?.touched || formulario.get('senha')?.dirty)">
+          <span *ngIf="formulario.get('senha')?.hasError('required')">Senha é obrigatória.</span>
+          <span *ngIf="formulario.get('senha')?.hasError('minlength')">Mínimo de 6 caracteres.</span>
+          <span *ngIf="formulario.get('senha')?.hasError('pattern')">
+            A senha deve conter pelo menos uma letra maiúscula, uma minúscula e um número.
+          </span>
+        </mat-error>
+        <mat-error *ngIf="formulario.hasError('senhaIgualEmail') && (formulario.get('senha')?.touched || formulario.get('senha')?.dirty)">
+          A senha não pode ser igual ao email.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="login-field" appearance="fill">
+        <mat-label>Confirmar Senha</mat-label>
+        <input matInput formControlName="confirmarSenha" type="password" />
+        <mat-error *ngIf="formulario.get('confirmarSenha')?.invalid && (formulario.get('confirmarSenha')?.touched || formulario.get('confirmarSenha')?.dirty)">
+          <span *ngIf="formulario.get('confirmarSenha')?.hasError('required')">Confirmação da senha é obrigatória.</span>
+        </mat-error>
+        <mat-error *ngIf="formulario.hasError('senhasDiferentes') && (formulario.get('confirmarSenha')?.touched || formulario.get('confirmarSenha')?.dirty)">
+          As senhas não são iguais.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="login-field" appearance="fill">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" type="tel" />
+        <mat-error *ngIf="formulario.get('telefone')?.invalid && (formulario.get('telefone')?.touched || formulario.get('telefone')?.dirty)">
+          <span *ngIf="formulario.get('telefone')?.hasError('required')">Telefone é obrigatório.</span>
+          <span *ngIf="formulario.hasError('telefoneInvalido')">Telefone inválido.</span>
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button class="botao" type="submit">
+        Fazer login
+      </button>
+    </form>
   </div>
 </div>
 

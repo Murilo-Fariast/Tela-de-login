@@ -1,17 +1,22 @@
-
 .custom-toolbar {
   background-color: #025940;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 0 16px;
 }
 
+.custom-toolbar button {
+  position: absolute;
+  left: 16px;
+}
+
 .toolbar-title {
-  margin: 0 auto;
   font-size: 24px;
   font-weight: bold;
 }
+
 .titulo {
   text-align: center;
   font-family: comfortaa;
@@ -19,7 +24,6 @@
   font-size: 22px;
   font-weight: bold;
 }
-
 
 .main-container {
   display: flex;
@@ -29,28 +33,27 @@
   background-color: #f5f5f5;
 }
 
-
 .login-box {
   background-color: white;
-  padding: 30px;
+  padding: 5px;
   border: 2px solid #025940;
   border-radius: 12px;
-  min-width: 300px;
-  max-width: 400px;
+  min-width: 100px;
+  max-width: 500px;
   width: 100%;
 }
 
-
 .login-field {
-  width: 100%;
+  width: 500px;
   margin-bottom: 20px;
 }
 
 .botao {
   width: 100%;
-  background-color: #025940 !important ;
+  background-color: #025940 !important;
   color: white !important;
 }
+
 .login-button:hover {
   background-color: #014a33;
 }
