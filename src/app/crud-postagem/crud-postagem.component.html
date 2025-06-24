@@ -1,0 +1,27 @@
+<div class="postagem-container">
+  <div class="form-box">
+    <h2>Criar nova postagem</h2>
+
+    <label for="titulo">Título:</label>
+    <input id="titulo" [(ngModel)]="titulo" />
+
+    <label for="conteudo">Conteúdo:</label>
+    <textarea id="conteudo" rows="4" [(ngModel)]="conteudo"></textarea>
+
+    <button (click)="adicionarPostagem()">Publicar</button>
+  </div>
+
+  <div class="lista-box">
+    <h3>Postagens</h3>
+
+    <div *ngIf="postagens.length === 0" class="vazio">
+      Nenhuma postagem ainda...
+    </div>
+
+    <div class="postagem" *ngFor="let postagem of postagens; let i = index">
+      <h4>{{ postagem.titulo }}</h4>
+      <p>{{ postagem.conteudo }}</p>
+      <button class="excluir" (click)="excluirPostagem(i)">Excluir</button>
+    </div>
+  </div>
+</div>

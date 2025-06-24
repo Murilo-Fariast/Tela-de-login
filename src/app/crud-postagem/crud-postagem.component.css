@@ -1,0 +1,86 @@
+.postagem-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.form-box, .lista-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h2, h3 {
+  color: #025940;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #025940;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #014a33;
+}
+
+.postagem {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.postagem h4 {
+  margin: 0;
+  color: #025940;
+}
+
+.postagem p {
+  margin: 10px 0 0;
+  color: #025940;
+}
+
+.excluir {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #a80000;
+}
+
+.excluir:hover {
+  background-color: #750000;
+}
+
+.vazio {
+  color: #999;
+  font-style: italic;
+}
